@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/icono_coste_servicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/coste_servicio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/coste_servicio"
+            app:srcCompat="@drawable/ic_tienda" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/coste_servicio"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/coste_del_servicio"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icono_coste_servicio">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/coste_servicio_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/icono_pregunta_costo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/ic_servicio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/pregunta_costo"
+            app:layout_constraintBottom_toBottomOf="@id/pregunta_costo"/>
+
+        <TextView
+            android:id="@+id/pregunta_costo"
+            style="@style/Widget.Propinas.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cuanto_a_costado_el_servicio"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@id/coste_servicio"
+            app:layout_constraintTop_toBottomOf="@id/coste_servicio"/>
+
+        <RadioGroup
+            android:id="@+id/opciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/boton_18"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/pregunta_costo"
+            app:layout_constraintTop_toBottomOf="@id/pregunta_costo">
+
+            <RadioButton
+                android:id="@+id/boton_20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/increible_20" />
+
+            <RadioButton
+                android:id="@+id/boton_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bueno_18" />
+
+            <RadioButton
+                android:id="@+id/boton_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aceptable_15" />
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/icono_redondeo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/ic_redondeo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/redondeo"
+            app:layout_constraintBottom_toBottomOf="@id/redondeo"/>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/redondeo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/deseas_redondear"
+            android:layout_marginStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icono_redondeo"
+            app:layout_constraintTop_toBottomOf="@id/opciones" />
+
+        <Button
+            android:id="@+id/boton_calculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calcular_propina"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/redondeo"
+            app:layout_constraintTop_toBottomOf="@id/redondeo" />
+
+        <TextView
+            android:id="@+id/resultado_propina"
+            style="@style/Widget.Propinas.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/boton_calculo"
+            tools:text="Precio de la propina: 10€" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

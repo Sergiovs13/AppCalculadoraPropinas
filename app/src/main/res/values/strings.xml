@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AppCalculadoraPropinas</string>
+    <string name="coste_del_servicio">Coste del servicio</string>
+    <string name="cuanto_a_costado_el_servicio">¿Cuanto a costado el servicio?</string>
+    <string name="increible_20">Increible (20%)</string>
+    <string name="bueno_18">Bueno (18%)</string>
+    <string name="aceptable_15">Aceptable (15%)</string>
+    <string name="deseas_redondear">¿Deseas redondear?</string>
+    <string name="calcular_propina">Calcular propina</string>
+    <string name="cantidad">Cantidad: %s</string>
+</resources>
